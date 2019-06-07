@@ -9,7 +9,6 @@ public class Main {
 
      }
 
-
     public static void tes( String s,int k){
         if (k<=s.length()){
             String s1=s.substring(k);
