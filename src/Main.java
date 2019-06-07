@@ -3,19 +3,14 @@ import Exercise.Find_Mode_in_Binary_Search_Tree;
 
 
 public class Main {
-
+    int num = 0;
      public static void main(String[] args) {
+         char c='2';
 
-
+         System.out.println();
      }
 
-    public static void tes( String s,int k){
-        if (k<=s.length()){
-            String s1=s.substring(k);
-            System.out.println(s1);
-            tes(s1,1);
-        }
-    }
+
 
 
 }
