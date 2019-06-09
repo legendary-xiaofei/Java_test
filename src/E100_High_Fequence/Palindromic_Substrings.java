@@ -1,4 +1,4 @@
-package E100道高频;
+package E100_High_Fequence;
 
 /**
  * 求最长回文子串
