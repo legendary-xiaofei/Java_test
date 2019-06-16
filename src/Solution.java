@@ -109,4 +109,24 @@ public class Solution {
         }
         return result;
     }
+
+    /**
+     * 冒泡法排序
+     *
+     * @param nums 返回排好的数据
+     */
+    private static void so(int []nums){
+        int temp=0;
+        for (int i=0;i<nums.length;i++){
+            for (int j=0;j<nums.length-1-i;j++){
+                if (nums[j]>nums[j+1]){
+                    temp=nums[j+1];
+                    nums[j+1]=nums[j];
+                    nums[j]=temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(nums));
+
+    }
 }
