@@ -3,7 +3,6 @@ package Exercise;
 public class Next_Greater_Element {
 
     /**
-
      *第496题，下一个更大元素
      * @param nums1 数组1
      * @param nums2 数组2
