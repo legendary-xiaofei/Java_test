@@ -53,7 +53,7 @@ public class ListSort {
     }
 
     /**
-     * 合并的过程
+     * 归并排序中合并的过程
      * @param l
      * @param r
      * @return
