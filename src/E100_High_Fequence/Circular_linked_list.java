@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Circular_linked_list {
 
-
     class ListNode{
         int val;
         ListNode next;
