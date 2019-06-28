@@ -1,5 +1,20 @@
 package E100_High_Fequence;
 
+/**
+ * 寻找最短的子数组，在给定的数组中寻找最短的子数组的长度，使得将该子数组排序后，整个数组呈升序排列。
+ *
+ * 测试用例：
+ *         int []test={2,6,4,8,10,9,15};    期望输出：5
+ *         int []test2={1,2,3,4,5};         期望输出：0
+ *         int []test3={2,1};               期望输出：2
+ *         int []test4={5,4,3,2,1};         期望输出：5
+ *         int []test5={1,3,2,2,2};         ……
+ *         int []test6={1,3,2,3,3};
+ *         int []test7={2,3,3,2,4};
+ *         int []test8={1,2,4,5,3};
+ *
+ *
+ */
 public class Shortest_Unsorted_Continuous_Subarray {
 
     public int findUnsortedSubarray(int[] nums) {

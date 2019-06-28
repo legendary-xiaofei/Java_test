@@ -1,8 +1,5 @@
 package E100_High_Fequence;
 
-import javax.print.attribute.standard.NumberUp;
-import java.util.ArrayList;
-
 public class Circular_linked_list {
 
     class ListNode{
