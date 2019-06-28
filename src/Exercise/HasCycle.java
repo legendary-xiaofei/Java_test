@@ -4,19 +4,24 @@ import java.util.ArrayList;
 
 public class HasCycle {
 
-//    int [] vist=new int[3];
-    public boolean Canfinish(int n,int [][] nums){
+    /**
+     * 这个题与100道高频题目中课程表那道题相同，就是先修课的问题。
+     * @param numCourses
+     * @param prerequisites
+     * @return
+     */
+    public boolean Canfinish(int numCourses,int [][] prerequisites){
 
-        int []visit=new int[n];
-        ArrayList<Integer> []graph=new ArrayList[n];
-        for (int i=0;i<n;i++){
+        int []visit=new int[numCourses];
+        ArrayList<Integer> []graph=new ArrayList[numCourses];
+        for (int i=0;i<numCourses;i++){
 
             graph[i]=new ArrayList<Integer>();
         }
-        for (int []pre:nums) {
+        for (int []pre:prerequisites) {
             graph[pre[1]].add(pre[0]);
         }
-        for (int i=0;i<n;i++){
+        for (int i=0;i<numCourses;i++){
             if (hasCycle(graph,visit,i)){
                 return false;
             }

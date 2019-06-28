@@ -20,7 +20,7 @@ public class Main {
 //          System.out.println(new Shortest_Unsorted_Continuous_Subarray().findUnsortedSubarray(test8));
 //         System.out.println(new ClassSchedule().canFinish(2,te));
 
-         System.out.println(new HasCycle().Canfinish(2,te));
+         System.out.println(new HasCycle().Canfinish(4,test3));
      }
 
 
