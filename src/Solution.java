@@ -129,4 +129,40 @@ public class Solution {
         System.out.println(Arrays.toString(nums));
 
     }
+    /**
+     * //         int n=cin.nextInt();
+     * //         int []user=new int[n];
+     * //         for (int i=0;i<n;i++){
+     * //             user[i]=cin.nextInt();
+     * //         }
+     *
+     *          int q=cin.nextInt();
+     *          String []data=new String[q];
+     *          Scanner scanner=new Scanner(System.in);
+     *          for (int i=0;i<q;i++){
+     *              data[i]=scanner.nextLine();
+     *          }
+     *          int [][]matrix=new int[q][3];
+     *          int count=0;
+     *
+     *          for(String i:data){
+     *              String []temp=i.split(" ");
+     *              int c=0;
+     *
+     *              for (String s:temp
+     *                   ) {
+     *                  matrix[count][c++]=Integer.parseInt(s);
+     *              }
+     *              count++;
+     *          }
+     *
+     *          for (int []te:matrix
+     *               ) {
+     *              for (int w:te){
+     *
+     *                  System.out.print(w);
+     *              }
+     *              System.out.println();
+     *          }
+     */
 }
