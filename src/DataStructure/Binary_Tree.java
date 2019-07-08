@@ -3,7 +3,9 @@ package DataStructure;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.util.PrimitiveIterator;
+import java.util.Queue;
 import java.util.Stack;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class Binary_Tree {
     /**
@@ -151,6 +153,35 @@ public class Binary_Tree {
             Binary_Tree n=stack1.pop();
             System.out.print(n.val+" ");
         }
+    }
+
+    /**
+     * 二叉树的层次遍历
+     */
+    public void BinaryTreeLevelOrder(Binary_Tree root) throws InterruptedException {
+        ArrayBlockingQueue<Binary_Tree> queue=new ArrayBlockingQueue<Binary_Tree>(100);
+        //树为空，直接返回
+        if (root == null)
+        {
+            return;
         }
+        Binary_Tree tre=root;
+
+        //先将根节点入队
+        queue.put(tre);
+        while (!queue.isEmpty())
+        {
+            //出队保存队头并访问
+            Binary_Tree temp=queue.poll();
+            System.out.print(temp.val+" ");
+            //将出队结点的左子树根入队
+            if (temp.left!=null)
+               queue.put(temp.left);
+            //将出队结点的右子树根入队
+            if (temp.right!=null)
+                queue.put(temp.right);
+        }
+    }
+
 }
 
