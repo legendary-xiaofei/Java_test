@@ -1,26 +1,41 @@
-
-import DataStructure.Binary_Tree;
-import Sort_algorithm.QuickSort;
+import Exercise.ListNodeAbout;
 
 public class Main {
 
-     public static void main(String[] args) throws InterruptedException {
+     public static void main(String[] args) {
 
-         Binary_Tree root=new Binary_Tree(1);
-         root.left=new Binary_Tree(2);
-         root.right=new Binary_Tree(3);
+          ListNodeAbout.ListNode listNode1=new ListNodeAbout.ListNode(5);
+          ListNodeAbout.ListNode listNode2=new ListNodeAbout.ListNode(2);
 
-         root.left.left=new Binary_Tree(4);
-         root.left.right=new Binary_Tree(5);
+          ListNodeAbout.ListNode listNode4=new ListNodeAbout.ListNode(4);
+          listNode1.next=listNode2;
+          listNode2.next=listNode4;
+          listNode1.next=null;
 
-         root.right.left=new Binary_Tree(6);
-         root.right.right=new Binary_Tree(7);
+          ListNodeAbout.ListNode listNodea=new ListNodeAbout.ListNode(5);
+          ListNodeAbout.ListNode listNodeb=new ListNodeAbout.ListNode(3);
+          ListNodeAbout.ListNode listNodec=new ListNodeAbout.ListNode(4);
 
-         root.BinaryTreeLevelOrder(root);
+          listNodea.next=listNodeb;
+          listNodeb.next=listNodec;
+          listNodea.next=null;
+          ListNodeAbout.ListNode listNode=null;
+          listNode=new ListNodeAbout()
+                  .addTwoNumbers(listNode1,listNodea);
 
+          while (listNode!=null){
 
-
+               System.out.print(listNode.val);
+               listNode=listNode.next;
+          }
      }
+     static int f(int n){
 
+          if (n==1||n==2){
+
+               return 1;
+          }
+          return f(n-2)+f(n-1);
+     }
 }
 

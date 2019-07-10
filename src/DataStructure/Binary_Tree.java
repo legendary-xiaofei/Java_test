@@ -122,8 +122,6 @@ public class Binary_Tree {
                     tre=tre.right;
                 }
             }
-
-
         }
     }
 
