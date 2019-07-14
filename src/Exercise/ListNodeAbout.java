@@ -13,6 +13,40 @@ public class ListNodeAbout {
             val = x;
         }
     }
+//    测试用例
+//    ListNodeAbout.ListNode listNode1=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNode2=new ListNodeAbout.ListNode(2);
+//    ListNodeAbout.ListNode listNode3=new ListNodeAbout.ListNode(0);
+//    ListNodeAbout.ListNode listNode4=new ListNodeAbout.ListNode(0);
+//
+//    listNode3.next=null;
+//    listNode4.next=null;
+//    listNode1.next=null;
+//
+//    ListNodeAbout.ListNode listNodea=new ListNodeAbout.ListNode(1);
+//    ListNodeAbout.ListNode listNodeb=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodec=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNoded=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodee=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodef=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodeg=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodeh=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodei=new ListNodeAbout.ListNode(9);
+//    ListNodeAbout.ListNode listNodej=new ListNodeAbout.ListNode(9);
+//
+//
+//
+//    listNodea.next=listNodeb;
+//    listNodeb.next=listNodec;
+//    listNodec.next=listNoded;
+//    listNoded.next=listNodee;
+//    listNodee.next=listNodef;
+//    listNodef.next=listNodeg;
+//    listNodeg.next=listNodeh;
+//    listNodeh.next=listNodei;
+//    listNodei.next=listNodej;
+//    listNodej.next=null;
+
 
     /**
      * 删除链表倒数第n个元素
@@ -89,22 +123,22 @@ public class ListNodeAbout {
 
     /**
      * 两数之和，leetcode第2题
+     * 链表长度在正常范围之内，不包括傻逼链表如：[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
      *
      * @param l1
      * @param l2
      * @return
      */
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers_old(ListNode l1, ListNode l2) {
 
         ListNode cur_l1=l1;
         ListNode cur_l2=l2;
         ListNode cur=null;
-        ListNode res=null;
+        ListNode res=new ListNode(0);
         cur=res;
-
-        Stack<Integer>stack=new Stack<>();
-        int count1=0;
-        int count2=0;
+        if (l1.val==0&&l2.val==0)return res;
+        long count1=0;
+        long  count2=0;
 
         int i=0;
         while (cur_l1!=null){
@@ -117,26 +151,72 @@ public class ListNodeAbout {
             count2+=cur_l2.val*Math.pow(10,j++);
             cur_l2=cur_l2.next;
         }
-        int add=count1+count2;
+        long  add=count1+count2;
         int temp=i>j?i-1:j-1;
 
-        int tt= (int) ((count1+count2)/Math.pow(10,temp));
-        stack.push(tt);
-        while (temp!=0){
 
-            add= (int) (add-tt*Math.pow(10,temp--));
+        int in=1;
+        long  cheng=1;
+        while (add!=0){
+            cheng*=10;
+            long t=(add%cheng);
+           int  t1=(int )(t/(cheng/10));
 
-             tt= (int) (add/Math.pow(10,temp));
-            stack.push(tt);
-
-        }
-        while (!stack.empty()){
-
-            cur.next=new ListNode(stack.pop());
+            cur.next=new ListNode(t1);
+            add-=t1*(cheng/10);
             cur=cur.next;
+
         }
         cur.next=null;
 
-        return res;
+        return res.next;
+
+    }
+
+    /**
+     * 两数之和包括正常范围，和傻逼范围[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int r=0;
+        ListNode cur_l1=l1;
+        ListNode cur_l2=l2;
+        ListNode cur=null;
+        ListNode result=new ListNode(0);
+        cur=result;
+        int add=0;
+        while (cur_l1!=null||cur_l2!=null){
+            add=0;
+            if (cur_l1!=null&&cur_l2!=null){
+                add=r+cur_l1.val+cur_l2.val;
+            }else if (cur_l1!=null){
+                add=r+cur_l1.val;
+            }
+            else {
+                add=r+cur_l2.val;
+            }
+            r=0;
+            if (add>9){
+                r=1;
+            }
+            cur.next=new ListNode(add%10);
+            cur=cur.next;
+
+
+            if (cur_l1!=null){
+                cur_l1=cur_l1.next;
+            }
+            if (cur_l2!=null){
+                cur_l2=cur_l2.next;
+            }
+
+        }
+        if (add>9){
+            cur.next=new ListNode(add/10);
+        }
+
+        return result.next;
     }
 }
