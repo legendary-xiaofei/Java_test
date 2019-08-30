@@ -11,6 +11,9 @@ public class Package {//0-1背包问题
         Scanner scanner=new Scanner(System.in);
         String []data1=scanner.nextLine().split(" ");
         String []data2=scanner.nextLine().split(" ");
+
+        StringBuffer stringBuffer=new StringBuffer("ninni");
+
         int n=scanner.nextInt();
         int []weigth=new int[data2.length];
         int []value=new int[data1.length];
@@ -20,6 +23,14 @@ public class Package {//0-1背包问题
         }
         System.out.print(fun(weigth,value,n));
     }
+
+    /**
+     *
+     * @param weight 物品重量
+     * @param value  物品的价值
+     * @param n  背包的容量
+     * @return
+     */
     private static int fun(int []weight,int []value,int n){
         int [][]dp=new int[value.length][n+1];//第i件商品，背包容量为j时，最大价值
 
