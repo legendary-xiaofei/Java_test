@@ -38,9 +38,11 @@ public class Longest_Palindromic_Substring {
 
         String longest = s.charAt(0)+"";
 
-        System.out.println("longest is " +longest.length());
+        //System.out.println("longest is " +longest.length());
         int length = s.length();
         boolean[][] dp = new boolean[length][length];
+
+        boolean[][]dpp=new boolean[length][length];
         for(int j = length-1;j>=0;j--){
             //j在前,i在后
             for(int i = j;i<length;i++){
@@ -51,6 +53,24 @@ public class Longest_Palindromic_Substring {
             }
         }
 
+//        for (int i=0;i<s.length();i++){
+//
+//            for (int j=0;j<i;j++){
+//
+//                if (i-j<2){
+//                    dpp[j][i]=true;
+//                }
+//                else if (dpp[j+1][i-1]&& s.charAt(i)==s.charAt(j)){
+//                    dpp[j][i]=true;
+//
+//                }
+//                if(dpp[j][i]&&i-j+1>longest.length()){
+//                    longest = s.substring(j,i+1);
+//                }
+//
+//            }
+//        }
+
         return longest;
     }
 
@@ -60,18 +80,13 @@ public class Longest_Palindromic_Substring {
         String s2="caba";
         String s3="ac";
         String s4="aaaa";
-        String ss=new Longest_Palindromic_Substring().ff(s4);
+        String s5="abbad";
+        String ss=new Longest_Palindromic_Substring().ff(s5);
 
-
-
-        for (char i:ss.toCharArray()){
-
-
-            System.out.print(i+ " ");
-        }
-
-
-
+//        for (char i:ss.toCharArray()){
+//
+//            System.out.print(i+ " ");
+//        }
 
     }
 }

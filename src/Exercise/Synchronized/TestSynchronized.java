@@ -1,4 +1,4 @@
-package Synchronized;
+package Exercise.Synchronized;
 
 public class TestSynchronized {
 

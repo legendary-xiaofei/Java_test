@@ -12,7 +12,7 @@ public class MergeSort {
         merge(nums,l,m+1,r);
 
     }
-    private void merge(int []nums,int l,int m,int r){
+    private void merge(int []nums,int l,int m,int r){//包括将数组拆分，先将数组拆分成left和right两个数组。然后再将两个数组合并起来。
         int []left=new int[m-l];
         int []right=new int[r-m+1];
         for (int i=l;i<m;i++) left[i - l] = nums[i];
@@ -36,7 +36,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int []test={6,3,10,9};
+        int []test={6,3,10,9,8,7,4,0,99};
 
         new MergeSort().mergeSort(test,0,test.length-1);
 

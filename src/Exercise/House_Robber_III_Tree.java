@@ -1,7 +1,4 @@
 package Exercise;
-
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 import java.util.Stack;
 
 public class House_Robber_III_Tree {

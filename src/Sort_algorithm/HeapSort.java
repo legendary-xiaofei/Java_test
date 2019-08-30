@@ -5,19 +5,17 @@ public class HeapSort {
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
-
     }
-
     public void heapify(int []nums,int n,int i){
         if (i>=n) return;//递归出口
 
         int max=i;
         int lchild=2*i+1;
         int rchild=2*i+2;
-        if (lchild<n&&nums[lchild]<nums[max]){
+        if (lchild<n&&nums[lchild]>nums[max]){
             max=lchild;
         }
-        if (rchild<n&&nums[rchild]<nums[max]){
+        if (rchild<n&&nums[rchild]>nums[max]){
 
             max=rchild;
         }
@@ -50,7 +48,7 @@ public class HeapSort {
     public static void main(String[] args) {
         int []a={5,9,4,1,3};
         int [][]test={{3,3},{5,-1},{-2,2}};
-        new HeapSort().heapsort(a,a.length,2);
+        new HeapSort().heapsort(a,a.length,a.length);
 
         for (int i:a
              ) {

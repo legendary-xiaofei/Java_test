@@ -1,9 +1,12 @@
 package DP;
 
-import org.omg.CORBA.MARSHAL;
-
 public class Dynamic_Programming{
 
+    /**
+     * 打家劫舍
+     * @param nums
+     * @return
+     */
     public int rob(int[] nums) {
 
         int []opt=new int[nums.length];
